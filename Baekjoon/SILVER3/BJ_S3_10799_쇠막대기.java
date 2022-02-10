@@ -1,11 +1,9 @@
-package algorithm_me;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Kyeee2 {
+public class BJ_S3_10799_쇠막대기 {
 
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
