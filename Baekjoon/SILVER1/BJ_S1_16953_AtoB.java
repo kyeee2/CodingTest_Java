@@ -17,6 +17,7 @@ public class BJ_S1_16953_AtoB {
 		}
 	}
 	
+	// BFS
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -44,6 +45,34 @@ public class BJ_S1_16953_AtoB {
 		
 		if(min == Integer.MAX_VALUE) System.out.println(-1);
 		else 						 System.out.println(min);
+	}
+
+	// 반대로 생각해서 푸는 방법
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tokens = new StringTokenizer(br.readLine());
+		
+		long A = Long.parseLong(tokens.nextToken()); // 10^9 은 long이다!!!
+		long B = Long.parseLong(tokens.nextToken());
+
+		int cnt = 1;
+		
+		while(B >= A) {
+			
+			if(B == A) break;
+			
+			if(B % 10 == 1) {
+				B /= 10;
+			} else if(B % 2 == 0) {
+				B /= 2;
+			} else break;
+			
+			cnt++;
+		}
+		
+		if(B == A) System.out.println(cnt);
+		else System.out.println(-1);
 	}
 
 }
