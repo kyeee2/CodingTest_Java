@@ -27,19 +27,17 @@ public class BJ_S1_2468_안전영역 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		N = Integer.parseInt(br.readLine());
 		
-		int minH = Integer.MAX_VALUE, maxH = -1; // minH: 최소 높이. maxH: 최대 높이
+		int maxH = -1; // minH: 최소 높이. maxH: 최대 높이
 		map = new int [N][N];
 		for(int r = 0; r < N; r++) {
 			tokens = new StringTokenizer(br.readLine());
 			for(int c = 0; c < N; c++) {
 				map[r][c] = Integer.parseInt(tokens.nextToken());
-				if(map[r][c] < minH) minH = map[r][c];
 				if(map[r][c] > maxH) maxH = map[r][c];
 			}
 		}
 		
-		// 최소 높이부터 최대 높이까지 완전탐색
-		for(int height = minH; height <= maxH; height++) {
+		for(int height = 0; height <= maxH; height++) { // 비가 오지 않는 경우도 고려
 			water = new boolean [N][N]; // 물이 차있는가?
 			
 			// 물이 차있는지 체크
