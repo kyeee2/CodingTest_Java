@@ -22,7 +22,7 @@ public class BJ_G5_2493_탑 {
 		Stack<Integer> top = new Stack<>();
 		for(int i = 0; i < N; i++) {
 			
-			while(!top.isEmpty() && (nums[top.peek()] < nums[i])) {
+			while(!top.isEmpty() && (nums[top.peek()] <= nums[i])) {
 				top.pop();
 			}
 			
